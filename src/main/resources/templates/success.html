@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Title</title>
+</head>
+<body>
+	<h1>成功</h1>
+	<div id="div01" th:text="${hello}">成功页面欢迎语</div>
+	<!-- th:utext 可以识别转义符   th:text 不可识别转义符-->
+	<div id="div02" th:utext="${hi}">成功页面欢迎语</div>
+	<!-- th:each每次遍历都会生成当前这个标签： 3个h4 -->
+	<h4 th:text="${user}" th:each="user:${users}"></h4>
+	<h4>
+		<span th:text="${user}" th:each="user:${users}"></span>
+	</h4>
+	<!-- [[${user}]] 不能识别转义符  [(${user})] 可以识别转义符 ] -->
+	<h4>
+		<span th:each="user:${users}">[[${user}]]</span>
+	</h4>
+	<h4>
+		<span th:each="user:${users}">[(${user})]</span>
+	</h4>
+</body>
+</html>
