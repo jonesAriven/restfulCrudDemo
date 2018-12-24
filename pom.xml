@@ -28,6 +28,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
+			<!--导入spring-boot-starter-web后默认使用tomcat-->
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
