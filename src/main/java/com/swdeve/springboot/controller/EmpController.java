@@ -79,7 +79,7 @@ public class EmpController {
 	 * 跳转到员工修改页面,查询某个员工的信息进行会写
 	 * restful风格uri：请求地址：/emp/{id}，请求方式：get
 	 * @param id
-	 * @param modle
+	 * @param model
 	 * @return
 	 */
 	@GetMapping("/emp/{id}")
