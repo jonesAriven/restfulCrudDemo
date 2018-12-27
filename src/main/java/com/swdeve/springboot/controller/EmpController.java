@@ -24,7 +24,7 @@ public class EmpController {
 
 	@Autowired
 	DepartmentDao departmentDao;
-	
+
 	/**
 	 *  查询所有员工
 	 *  restful风格uri：请求地址：/emps，请求方式：get
@@ -47,7 +47,7 @@ public class EmpController {
         // classpath:/templates/xxxx.html
 		return "emp/list";
 	}
-	
+
 	/**
 	 * 跳转到员工新增页面
 	 * restful风格uri：请求地址：/emp，请求方式：get
@@ -59,7 +59,7 @@ public class EmpController {
 		model.addAttribute("depts", departmentDao.getDepartments());
 		return "emp/edit";
 	}
-	
+
 	/**
 	 * 新增员工
 	 * restful风格uri：请求地址：/emp，请求方式：post
@@ -74,7 +74,7 @@ public class EmpController {
         // forward: 表示转发到一个地址   转发是服务端完成的，在浏览器端看不到访问地址的变化
 		return "redirect:/emps";//重定向到查询员工列表页面
 	}
-	
+
 	/**
 	 * 跳转到员工修改页面,查询某个员工的信息进行会写
 	 * restful风格uri：请求地址：/emp/{id}，请求方式：get
@@ -91,7 +91,7 @@ public class EmpController {
 		logger.info("修改的员工信息为：" + emp.toString());
 		return "emp/edit";
 	}
-	
+
 	/**
 	 * 修改员工
 	 * restful风格uri：请求地址：/emp/{id}，请求方式：put
@@ -104,7 +104,7 @@ public class EmpController {
 		employeeDao.save(emp);
 		return "redirect:/emps";//重定向到查询员工列表页面
 	}
-	
+
 	/**
 	 * 删除员工
 	 * restful风格uri：请求地址：/emp/{id}，请求方式：delete
