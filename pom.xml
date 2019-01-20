@@ -23,6 +23,8 @@
 		<!-- 布局功能的支持程序 thymeleaf3主程序 layout2以上版本 -->
 		<!-- thymeleaf2 layout1 -->
 		<thymeleaf-layout-dialect.version>2.2.2</thymeleaf-layout-dialect.version>
+		<!--properties节点中设置docker镜像的前缀“springboot”-->
+		<!--<docker.image.prefix>springboot</docker.image.prefix>-->
 	</properties>
 
 	<dependencies>
@@ -122,6 +124,27 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			<!--加入maven插件“docker-maven-plugin”-->
+
+			<!--<plugin>-->
+				<!--<groupId>com.spotify</groupId>-->
+				<!--<artifactId>docker-maven-plugin</artifactId>-->
+				<!--&lt;!&ndash;<version>0.2.3</version>&ndash;&gt;-->
+				<!--<version>0.4.11</version>-->
+				<!--<configuration>-->
+					<!--<imageName>${docker.image.prefix}/${project.artifactId}</imageName>-->
+					<!--<dockerDirectory>src/main/docker</dockerDirectory>-->
+					<!--<dockerHost>http://192.168.31.95:8090</dockerHost>-->
+					<!--<resources>-->
+						<!--<resource>-->
+							<!--<targetPath>/</targetPath>-->
+							<!--<directory>${project.build.directory}</directory>-->
+							<!--<include>${project.build.finalName}.jar</include>-->
+						<!--</resource>-->
+					<!--</resources>-->
+				<!--</configuration>-->
+			<!--</plugin>-->
+
 		</plugins>
 	</build>
 
